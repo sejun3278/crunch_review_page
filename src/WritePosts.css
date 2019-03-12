@@ -1,17 +1,22 @@
 .posts_div {
   display: grid;
-  grid-template-rows: 6.5% 6.5% 6.5% 6.5% 50% 6% 5%;
+  grid-template-rows: 50px 50px 50px 50px 250px 50px;
   grid-auto-columns: 100%;
   font-size: 17px;
   font-family: SF Pro Text;
   overflow: auto;
 }
 
+.posts_contents_title {
+  display: grid;
+  text-decoration: none;
+  margin-top: 3px;
+}
+
 .posts_contents {
   display: grid;
-  grid-template-rows: 45%;
-  margin-top: -4px;
-  padding: 15px;
+  grid-template-rows: 5%;
+  padding: 10px;
   border-bottom: solid 1px #ccc;
   font-weight: bold;
 }
@@ -19,27 +24,27 @@
 .posts_input_border {
   text-align: right;
   width: 100%;
-  margin-top: -12px;
 }
 
 .posts_input_inside {
   border: none;
-  width: 65%;
+  width: 60%;
   line-height: 1.29;
   letter-spacing: -0.4px;
 }
 
 .contents_div {
   display: grid;
-  grid-template-columns: 58% 30%;
-  grid-template-rows: 10%;
+  grid-template-columns: 53% 30%;
+  grid-template-rows: 15%;
 }
 
 .public_title {
-  margin-left: 25px;
+  margin-left: 23px;
   line-height: 28px;
   font-family: SF Pro Text;
   font-size: 17px;
+  margin-right: -10px;
 }
 
 /* ------------------ 체크박스 동그랗게 만들기! ---------------------------------*/
@@ -47,7 +52,7 @@
   position: relative;
   text-align: right;
   padding: 10px;
-  top: -13px;
+  top: -10px;
   width: 130%;
 }
 
@@ -118,25 +123,19 @@
 .contents_textarea {
   resize: none;
   border: none;
-  width: 170%;
-  height: 95%;
+  width: 183%;
   letter-spacing: -0.4px;
   font-size: 16px;
 }
 
 .add_picture_div {
   text-align: right;
-  margin-top: -13px;
-}
-
-.add_picture_icon {
-  width: 25px;
-  margin-top: 3px;
+  padding-right: 10px;
 }
 
 .agreement_div {
   display: grid;
-  grid-auto-rows: auto;
+  /* grid-auto-rows: auto; */
   border-bottom: solid 1px #ccc;
 }
 
@@ -166,7 +165,6 @@
 
 .select_result_div {
   position: grid;
-  margin-top: 50px;
   border-top: solid 1px #ccc;
   padding: 10px;
   padding-bottom: 50px;
@@ -185,6 +183,24 @@
   grid-template-rows: -20px;
   grid-column: 5;
   grid-row: 1;
+}
+
+.select_result_save_sumbit {
+  border: none;
+  background-color: rgba(248, 248, 248, 0.82);
+  width: 50px;
+  height: 50px;
+  margin-top: -10px;
+  color: #007aff;
+  font-family: SF Pro Text;
+  font-size: 17px;
+  line-height: 1.29;
+}
+
+.select_result_cancle {
+  font-size: 17px;
+  line-height: 1.29;
+  margin-top: 5px;
 }
 
 /* .App {
