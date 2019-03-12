@@ -1,6 +1,7 @@
 .posts_div {
   display: grid;
-  grid-template-rows: 7% 7% 7% 7% 50% 10%;
+  grid-template-rows: 6.5% 6.5% 6.5% 6.5% 50% 6% 5%;
+  grid-auto-columns: 100%;
   font-size: 17px;
   font-family: SF Pro Text;
   overflow: auto;
@@ -8,8 +9,8 @@
 
 .posts_contents {
   display: grid;
-  grid-template-rows: 60%;
-  margin-top: -5px;
+  grid-template-rows: 45%;
+  margin-top: -4px;
   padding: 15px;
   border-bottom: solid 1px #ccc;
   font-weight: bold;
@@ -18,23 +19,25 @@
 .posts_input_border {
   text-align: right;
   width: 100%;
-  margin-top: -13px;
+  margin-top: -12px;
 }
 
 .posts_input_inside {
   border: none;
   width: 65%;
+  line-height: 1.29;
+  letter-spacing: -0.4px;
 }
 
 .contents_div {
   display: grid;
   grid-template-columns: 58% 30%;
-  grid-template-rows: 15%;
+  grid-template-rows: 10%;
 }
 
 .public_title {
   margin-left: 25px;
-  line-height: 25px;
+  line-height: 28px;
   font-family: SF Pro Text;
   font-size: 17px;
 }
@@ -44,14 +47,16 @@
   position: relative;
   text-align: right;
   padding: 10px;
-  top: -10px;
+  top: -13px;
   width: 130%;
 }
 
 .agreement_checkbox {
   position: relative;
-  margin-top: 10px;
-  border-bottom: solid 1px #ccc;
+  text-align: left;
+  top: -42px;
+  margin-left: 10px;
+  line-height: 50px;
 }
 
 .checkbox_div label,
@@ -64,6 +69,7 @@
   position: absolute;
   width: 22px;
   height: 22px;
+  margin-top: 3px;
 }
 
 .checkbox_div label:after,
@@ -110,19 +116,17 @@
 /* -------------------------------------------------------------------------- */
 
 .contents_textarea {
-  display: grid;
-  grid-auto-rows: 100%;
   resize: none;
   border: none;
   width: 170%;
   height: 95%;
+  letter-spacing: -0.4px;
+  font-size: 16px;
 }
 
 .add_picture_div {
-  position: grid;
-  grid-auto-rows: 10%;
   text-align: right;
-  margin-top: -6px;
+  margin-top: -13px;
 }
 
 .add_picture_icon {
@@ -138,7 +142,7 @@
 
 .collecting_personal_information_agreement {
   background-color: #efeff4;
-  padding: 13px;
+  padding: 11px;
 }
 
 .collecting_personal_information_agreement_notice {
@@ -153,22 +157,34 @@
 .agreement_ment {
   position: relative;
   font-family: SF Pro Text;
-  font-size: 12px;
-  width: 50%;
+  font-size: 14px;
   text-decoration: none;
-  line-height: 10px;
-  left: 55px;
-  top: -15px;
   letter-spacing: -1px;
+  margin-top: -37px;
+  margin-left: 45px;
 }
 
 .select_result_div {
   position: grid;
+  margin-top: 50px;
+  border-top: solid 1px #ccc;
+  padding: 10px;
+  padding-bottom: 50px;
+  background-color: rgba(248, 248, 248, 0.82);
 }
 
 .agreement_checkbox {
   position: relative;
   width: 2%;
+}
+
+.select_result_save {
+  position: grid;
+  text-align: right;
+  margin-top: -25px;
+  grid-template-rows: -20px;
+  grid-column: 5;
+  grid-row: 1;
 }
 
 /* .App {

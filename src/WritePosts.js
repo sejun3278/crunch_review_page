@@ -109,36 +109,26 @@ class WritePosts extends Component {
                   checked={this.state.agreement}
                 />
                 <label className="agreement_lavel" onClick={() => this.setState({agreement : !this.state.agreement})} htmlFor="checkbox"></label>
-                  <div className="agreement_ment">
+                </div>
+
+                <div className="agreement_ment">
                     <u style={{textDecoration:'none'}}> <u style={{color:'#007aff', textDecoration:'none'}}> (필수) </u> 동의합니다. </u>
                   </div>
-                </div>
             </div>
 
-            {/* <div className="select_result_div">
-                <div>
+            <div className="select_result_div">
+                <div className="select_result_cancle">
                   <a style={{color:'#007aff', textAlign:'left'}}> 취소 </a>
                 </div>
 
-                <div>
-                  <a> 저장 </a>
+                <div className="select_result_save">
+                  <a style={{color:'#007aff', textAlign:'right'}}> 저장 </a>
                 </div>
-            </div> */}
-        </div>
-
-        
+            </div>
+          </div>
         </form>
       );
     }
   }
   
   export default WritePosts;
-
-
-//   <div className="collecting_personal_information_agreement checkbox_div">
-//                   <input
-//                     type="checkbox"
-//                     checked={this.state.agreement}
-//                   />
-//                   <label className="check_lavel" onClick={() => this.setState({agreement : !this.state.agreement})} htmlFor="checkbox"></label>
-//                 </div>
