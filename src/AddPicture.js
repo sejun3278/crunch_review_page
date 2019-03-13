@@ -7,63 +7,47 @@ class AddPicture extends Component {
         this.state = {
             image_file : '',
             image_url : '',
+            image_storage : {},
             image_url_storage : [],
             image_file_storage : [],
         }
         this.imagePreviewChange = this.imagePreviewChange.bind(this)
     }
 
-    imagePreviewChange() {
-        if(document.getElementById('imageInput').files[0] !== undefined) {
-            var file = document.getElementById('imageInput').files[0]
-            var url = window.URL.createObjectURL(file)
+    imagePreviewChange(e) {
+            let file = document.getElementById('imageInput').files[0]
+              if(Object.keys(this.state.image_storage).includes(file.name) === false) {
+                let url = window.URL.createObjectURL(file)
 
-            if(this.state.image_file_storage.includes(file.name) === false) {
+                let cover_storage = this.state.image_storage;
+                cover_storage[file.name] = url;
+
                 this.setState({
                     image_file: file,
                     image_url: url,
+                    image_storage : cover_storage,
                     image_file_storage: this.state.image_file_storage.concat([file.name]), 
                     image_url_storage: this.state.image_url_storage.concat([url])
                 });
 
-                } else {
-                    alert('이미 추가된 파일입니다.')
-                }
-            }
-        }
+                    } else {
+                        alert('이미 추가된 파일입니다.')
+                    }
+        };
 
         imageRemove(e) {
-            let cover_url_array = this.state.image_url_storage;
-            let cover_file_array = this.state.image_file_storage;
-
             let image_class = e.target.classList[1];
-            let image_index = cover_url_array.indexOf(image_class);
+            let cover_storage = this.state.image_storage;
 
-            cover_url_array[image_index] = null;
-            cover_file_array[image_index] = null;
-            
-            let result_url_array = [];
-            let result_file_array = [];
-            cover_url_array.forEach( (el) => {
-                if(el !== null) {
-                    result_url_array.push(el);
-                }
-            })
-
-            result_file_array.forEach( (el) => {
-                if(el !== null) {
-                    result_file_array.push(el);
-                }
-            }) 
-
+            delete cover_storage[image_class];
             this.setState({
-                image_url_storage : result_url_array,
-                image_file_storage : result_file_array
+                image_storage : cover_storage
             })
         }
 
     render() {
-        let add_image_size = this.state.image_url_storage.length * 145;
+        let image_storage = Object.keys(this.state.image_storage);
+        let add_image_size = image_storage.length * 145;
 
         return(
             <form onSubmit={(e) => this.handleSubmit(e)}>
@@ -87,18 +71,15 @@ class AddPicture extends Component {
                         />
                     </span>
 
-            {this.state.image_url_storage.length > 0
+            {image_storage.length > 0
                 ? <div className="picture_collection"> 
                     <div className="add_images" style={{width:add_image_size}}>
-                    {this.state.image_url_storage.length > 0
-                        ?
-                        this.state.image_url_storage.map( (el, i) => {
+                        {image_storage.map( (el, i) => {
                             return(
-                                    <img className={`add_image_url ${el}`} src={el} key={i} onClick={(e) => this.imageRemove(e)}/>
+                                    <img className={`add_image_url ${el}`} src={this.state.image_storage[el]} key={i} onClick={(e) => this.imageRemove(e)}/>
                             )
                         })
-                        : null
-                    } 
+                    }
                     </div>
                 </div>
                 : null
