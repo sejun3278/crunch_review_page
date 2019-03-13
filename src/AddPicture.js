@@ -7,38 +7,66 @@ class AddPicture extends Component {
         this.state = {
             image_file : '',
             image_url : '',
-            image_storage : [],
+            image_url_storage : [],
+            image_file_storage : [],
         }
         this.imagePreviewChange = this.imagePreviewChange.bind(this)
     }
 
     imagePreviewChange() {
-        console.log(document.getElementById('imageInput'))
-        console.log(document.getElementById('imageInput').files[0])
         if(document.getElementById('imageInput').files[0] !== undefined) {
-            var file = document.getElementById('imageInput').files[0];
+            var file = document.getElementById('imageInput').files[0]
             var url = window.URL.createObjectURL(file)
 
-            if(this.state.image_storage.includes(url) === false) {
+            if(this.state.image_file_storage.includes(file.name) === false) {
                 this.setState({
                     image_file: file,
                     image_url: url,
-                    image_storage: this.state.image_storage.concat([url])
+                    image_file_storage: this.state.image_file_storage.concat([file.name]), 
+                    image_url_storage: this.state.image_url_storage.concat([url])
                 });
+
+                } else {
+                    alert('이미 추가된 파일입니다.')
                 }
             }
         }
 
-    imageRemove() {
-        alert(1)
-    }
+        imageRemove(e) {
+            let cover_url_array = this.state.image_url_storage;
+            let cover_file_array = this.state.image_file_storage;
+
+            let image_class = e.target.classList[1];
+            let image_index = cover_url_array.indexOf(image_class);
+
+            cover_url_array[image_index] = null;
+            cover_file_array[image_index] = null;
+            
+            let result_url_array = [];
+            let result_file_array = [];
+            cover_url_array.forEach( (el) => {
+                if(el !== null) {
+                    result_url_array.push(el);
+                }
+            })
+
+            result_file_array.forEach( (el) => {
+                if(el !== null) {
+                    result_file_array.push(el);
+                }
+            }) 
+
+            this.setState({
+                image_url_storage : result_url_array,
+                image_file_storage : result_file_array
+            })
+        }
 
     render() {
-        let add_image_size = this.state.image_storage.length * 150;
+        let add_image_size = this.state.image_url_storage.length * 145;
 
-        console.log(this.state.image_storage)
         return(
-            // <form onSubmit={(e) => this.handleSubmit(e)}>
+            <form onSubmit={(e) => this.handleSubmit(e)}>
                 <div className="posts_contents">
                     사진 추가하기
                     <div className="add_picture_div">
@@ -59,14 +87,14 @@ class AddPicture extends Component {
                         />
                     </span>
 
-            {this.state.image_file !== '' 
+            {this.state.image_url_storage.length > 0
                 ? <div className="picture_collection"> 
                     <div className="add_images" style={{width:add_image_size}}>
-                    {this.state.image_file !== ''
+                    {this.state.image_url_storage.length > 0
                         ?
-                        this.state.image_storage.map( (el, i) => {
+                        this.state.image_url_storage.map( (el, i) => {
                             return(
-                                    <img className="add_image_url" src={el} key={i} onClick={() => this.imageRemove()}/>
+                                    <img className={`add_image_url ${el}`} src={el} key={i} onClick={(e) => this.imageRemove(e)}/>
                             )
                         })
                         : null
@@ -74,22 +102,9 @@ class AddPicture extends Component {
                     </div>
                 </div>
                 : null
-            }
-                {/* <div className="picture_collection"> 
-                    {this.state.image_file !== ''
-                        ?
-                        this.state.image_storage.map( (el, i) => {
-                            {console.log(el)}
-                            return(
-                                
-                                    <img className="add_image_url" src={el} key={i} onClick={() => this.imageRemove()}/>
-                            )
-                        })
-                        : null
-                    } 
-                    </div>            */}
+                }
                 </div>
-        // </form>
+        </form>
         )
     }
 
