@@ -5,8 +5,7 @@ class WritePostsContents extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            pubilc : false,
-            agreement : false
+            pubilc : false
         }
     }
 

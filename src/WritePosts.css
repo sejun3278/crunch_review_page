@@ -1,6 +1,6 @@
 .posts_div {
   display: grid;
-  grid-template-rows: 50px 50px 50px 50px 250px 50px;
+  grid-template-rows: 50px 50px 50px 50px 250px;
   grid-auto-columns: 100%;
   font-size: 17px;
   font-family: SF Pro Text;
@@ -131,11 +131,33 @@
 .add_picture_div {
   text-align: right;
   padding-right: 10px;
+  margin-bottom: -0px;
+  height: 5px;
+}
+
+.add_picture_image {
+  position: relative;
+  top: -5%;
+}
+.add_picture_button > input{
+  height: 100%;
+  width: 100;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.add_picture_button {
+  position: absolute;
+  width: 15px;
+  right: 20px;
+  display: inline-block;
+  overflow: hidden;
+  background: center center no-repeat;
+  background-image: "https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2018/png/iconmonstr-plus-circle-thin.png&r=48&g=104&b=255"
 }
 
 .agreement_div {
   display: grid;
-  /* grid-auto-rows: auto; */
   border-bottom: solid 1px #ccc;
 }
 
@@ -167,7 +189,8 @@
   position: grid;
   border-top: solid 1px #ccc;
   padding: 10px;
-  padding-bottom: 50px;
+  height: 100%;
+  border-bottom: solid 2px #ccc;
   background-color: rgba(248, 248, 248, 0.82);
 }
 
@@ -179,17 +202,34 @@
 .select_result_save {
   position: grid;
   text-align: right;
-  margin-top: -25px;
+  margin-top: -20px;
   grid-template-rows: -20px;
   grid-column: 5;
   grid-row: 1;
+}
+
+.add_image_url {
+  position: relative;
+  border: solid 1px black;
+  position: grid;
+  padding: 10px;
+  width: 100px;
+  height: 100px;
+  margin-left: 20px;
+}
+
+.picture_collection {
+  position: grid;
+  padding: 5px;
+  padding-top: 40px;
+  overflow: auto;
+  grid-auto-flow: column;
 }
 
 .select_result_save_sumbit {
   border: none;
   background-color: rgba(248, 248, 248, 0.82);
   width: 50px;
-  height: 50px;
   margin-top: -10px;
   color: #007aff;
   font-family: SF Pro Text;
@@ -201,6 +241,11 @@
   font-size: 17px;
   line-height: 1.29;
   margin-top: 5px;
+}
+
+.private_document {
+  color: #007aff;
+  text-decoration: none;
 }
 
 /* .App {

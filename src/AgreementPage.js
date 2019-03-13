@@ -16,7 +16,7 @@ class AgreementPage extends Component {
               <div className="collecting_personal_information_agreement">
                 <u className="collecting_personal_information_agreement_notice"> 
                 비회원 글작성에 대한 개인정보 수집 및 이용동의
-                  <b style={{color:'#007aff'}}> <u> 전체보기 </u> </b>
+                  <b style={{color:'#007aff'}}> <a className="private_document" href="http://m.crunchprice.com/service/private.php"> 전체보기 </a> </b>
                 </u>
               </div>
 

@@ -21,8 +21,8 @@ class WritePosts extends Component {
               )
             })}
             <WritePostsContents />
-          <AddPicture />
           </div>
+          <AddPicture />
           <AgreementDiv />
         </form>
       );
