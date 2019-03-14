@@ -3,28 +3,28 @@
         "title" : "이름",
         "class" : "posts_input_inside",
         "type" : "text",
-        "name" : "name",
+        "name" : "writerNm",
         "placeholder" : "이름을 입력해주세요."
     },
     {
         "title" : "비밀번호",
         "class" : "posts_input_inside",
         "type" : "password",
-        "name" : "password",
+        "name" : "writerPw",
         "placeholder" : "비밀번호를 입력해주세요."
     },
     {
         "title" : "평가",
         "class" : "posts_input_inside",
         "type" : "text",
-        "name" : "evaluation",
+        "name" : "goodsPt",
         "placeholder" : "평가를 해주세요."
     },
     {
         "title" : "제목",
         "class" : "posts_input_inside",
         "type" : "text",
-        "name" : "title",
+        "name" : "subject",
         "placeholder" : "제목을 입력해주세요."
     }
 ]

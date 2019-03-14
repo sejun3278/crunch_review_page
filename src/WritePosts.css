@@ -135,10 +135,6 @@
   height: 5px;
 }
 
-.add_picture_image {
-  position: relative;
-  top: -5%;
-}
 .add_picture_button > input{
   height: 100%;
   width: 100;

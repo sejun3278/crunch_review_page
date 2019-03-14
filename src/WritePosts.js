@@ -13,7 +13,7 @@ class WritePosts extends Component {
 
     render() {
       return (
-        <form method="POST">
+        <form method="POST" action="./example2.php" encType="multipart/form-data">
           <div className="posts_div">
             {Data.map( (el, i) => {
               return(
