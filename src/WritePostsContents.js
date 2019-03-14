@@ -17,6 +17,7 @@ class WritePostsContents extends Component {
                      <input
                          type="checkbox"
                          checked={this.state.pubilc}
+                         name="private"
                      />
                      <label className="check_lavel" onClick={() => this.setState({pubilc : !this.state.pubilc})} htmlFor="checkbox"></label>
                      <b className="public_title"> 비공개 </b>

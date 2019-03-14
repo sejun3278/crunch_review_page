@@ -54,7 +54,6 @@ class AddPicture extends Component {
         let add_image_size = image_storage.length * 145;
 
         return(
-            // <form>
                 <div className="posts_contents">
                     사진 추가하기
                     <div className="add_picture_div">
@@ -65,11 +64,11 @@ class AddPicture extends Component {
                 </div>
                 
                 <span className="add_picture_button">
-                        <input
+                        <input multiple
                             onChange={ (event) => this.imagePreviewChange(event) }
                             id="imageInput"
                             accept=".jpg,.jpeg,.png,.gif,.bmp"
-                            name="pictures"
+                            name="uploadFileNm"
                             type="file"
                         />
                     </span>
@@ -88,7 +87,6 @@ class AddPicture extends Component {
                 : null
                 }
                 </div>
-        // </form>
         )
     }
 

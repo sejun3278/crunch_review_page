@@ -30,7 +30,7 @@ class WritePostsInfo extends Component {
                         name={Data.name}
                         placeholder={placeholder_ment}
                     />
-                    :   <div className={Data.class} style={{marginLeft:'10px'}}>
+                    :   <div className={Data.class} className="star_rating_div">
                           <StarRatingComponent
                             name="goodsPt" 
                             starCount={5}
