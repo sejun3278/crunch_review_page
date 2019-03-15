@@ -10,6 +10,12 @@ class WritePostsContents extends Component {
     }
 
     render() {
+        let private_switch = null;
+        {this.state.pubilc 
+          ? private_switch = 'y'
+          : private_switch = 'n'
+        } 
+
         return(
             <div className="posts_contents contents_div">
                 내용
@@ -18,8 +24,9 @@ class WritePostsContents extends Component {
                          type="checkbox"
                          checked={this.state.pubilc}
                          name="private"
+                         value={private_switch}
                      />
-                     <label className="check_lavel" onClick={() => this.setState({pubilc : !this.state.pubilc})} htmlFor="checkbox"></label>
+                     <label className="check_lavel" onClick={() => this.setState({ pubilc : !this.state.pubilc })} htmlFor="checkbox"></label>
                      <b className="public_title"> 비공개 </b>
                 </div>
 

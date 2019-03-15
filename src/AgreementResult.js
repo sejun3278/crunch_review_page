@@ -12,18 +12,17 @@ class AgreementResult extends Component {
     render() {
         return(
             <div className="select_result_div">
-            <div className="select_result_cancle">
-              <a style={{color:'#007aff', textAlign:'left'}}> 취소 </a>
-            </div>
+              <div className="select_result_cancle">
+                <a style={{color:'#007aff', textAlign:'left'}}> 취소 </a>
+              </div>
 
-            <div className="select_result_save">
+              <div className="select_result_save">
                 <button
                     className="select_result_save_sumbit"
                     type="sumbit"
                 > 저장 </button>
-              {/* <a > 저장 </a> */}
+              </div>
             </div>
-        </div>
         )
     }
 
